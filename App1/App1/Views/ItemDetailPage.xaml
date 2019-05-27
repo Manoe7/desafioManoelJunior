@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.ItemDetailPage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Editar" Clicked="Edit_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="edit-icon.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="20">
+            <Label Text="Nome:" FontSize="Medium" />
+            <Label Text="{Binding Item.Text}" FontSize="Small"/>
+            <Label Text="Descrição:" FontSize="Medium" />
+            <Label Text="{Binding Item.Description}" FontSize="Small"/>
+            <Label Text="Status da tarefa:" FontSize="Medium" />
+            <Label Text="{Binding Item.Status}" FontSize="Small"/>
+            <ListView ItemsSource="{Binding StatusHistoryContent}" Header=" " >
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="20" >
+                            <Label Text="Histórico de status:" FontSize="Medium" />
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Status}" Detail="{Binding Date}" IsEnabled="False"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
