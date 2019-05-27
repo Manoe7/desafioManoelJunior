@@ -4,3 +4,5 @@ App de gestão de tarefas desenvolvido em Xamarin e SQLite contendo as 4 funçõ
 2 - O usuário deseja registrar o nome da tarefa e o seu respectivo status: Aberta, Em Andamento, Resolvida, Canceladas
 3 - Tarefas criadas e que não foram resolvidas ou canceladas com mais de 10 dias devem ter alguma indicação visual.
 4 - (opcional) Ao clicar sobre tarefa, o usuário poderá visualizar o histórico de status das tarefas.
+
+by: Manoel Junior
